@@ -104,13 +104,13 @@ My Life at California
 - 🏀 I have played basketball my entire life and I also love watching it.
 - 💻 I joined the CyberAegis club in Middle School
 - 🏫 Graduated Middle School and started High School at Del Norte
-### Culture, Family, and Fun
+### Family, Friends, and Fun
 
 Everything for me, as for many others, revolves around family and faith.
 
-- My mother told me that I was Danish, English. and Irish, here is my researched [family tree]({{site.baseurl}}/images/about/familytree.png)
-- My family is pretty big as I have been married twice, my 1st wife passed away.  We have had 5 kids, 4 adopted by me, 1 biological.  Plus, there are three grandkids.  My name to my grandkids is Abuilito.
-- The gallery of pics has some of my family, fun, culture and faith memories.
+- I was born in the U.S. but my family is from India
+- My family consists of 4 people, me, my younger sister, my dad, and my mom
+- The gallery of pics has some of my family, friends, and fun
 
 <comment>
 Gallery of Pics, scroll to the right for more ...
