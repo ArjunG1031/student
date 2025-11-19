@@ -106,7 +106,7 @@ My Life at California
 - 🏫 Graduated Middle School and started High School at Del Norte
 ### Family, Friends, and Fun
 
-Everything for me, as for many others, revolves around family and faith.
+Everything for me revolves around family and friends.
 
 - I was born in the U.S. but my family is from India
 - My family consists of 4 people, me, my younger sister, my dad, and my mom
