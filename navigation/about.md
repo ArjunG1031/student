@@ -35,63 +35,82 @@ Images are from Wikipedia
 }
 </style>
 
-<div class="grid-container" id="grid_container"></div>
+## Where I’ve Lived
+<div class="grid-container" id="location_grid"></div>
+
+## Music I Like
+<div class="grid-container" id="music_grid"></div>
 
 <script>
-var container = document.getElementById("grid_container");
+// ===== CONTAINERS =====
+var locationContainer = document.getElementById("location_grid");
+var musicContainer = document.getElementById("music_grid");
 
-// DATA (California + Songs)
-var living_in_the_world = [
+// ===== LOCATION DATA =====
+var locations = [
   {
-    "image": "http://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg",
-    "title": "California",
-    "subtitle": "Been here my entire life"
-  },
-  {
-    "image": "/images/about/COME N GO - YEAT.png",
-    "title": "COME N GO",
-    "subtitle": "Yeat"
-  },
-  {
-    "image": "/images/about/Butterfly Effect - Travis Scott.png",
-    "title": "Butterfly Effect",
-    "subtitle": "Travis Scott"
-  },
-  {
-    "image": "/images/about/Bad Time - Lil Tecca.png",
-    "title": "Bad Time",
-    "subtitle": "Lil Tecca"
-  },
-  {
-    "image": "/images/about/New Drop - Don Toliver.png",
-    "title": "New Drop",
-    "subtitle": "Don Toliver"
+    image: "http://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg",
+    title: "California",
+    subtitle: "Been here my entire life"
   }
 ];
 
-// Build grid
-for (const item of living_in_the_world) {
-  var gridItem = document.createElement("div");
-  gridItem.className = "grid-item";
+// ===== MUSIC DATA =====
+var songs = [
+  {
+    image: "/images/about/COME N GO - YEAT.png",
+    title: "COME N GO",
+    subtitle: "Yeat"
+  },
+  {
+    image: "/images/about/Butterfly Effect - Travis Scott.png",
+    title: "Butterfly Effect",
+    subtitle: "Travis Scott"
+  },
+  {
+    image: "/images/about/Bad Time - Lil Tecca.png",
+    title: "Bad Time",
+    subtitle: "Lil Tecca"
+  },
+  {
+    image: "/images/about/New Drop - Don Toliver.png",
+    title: "New Drop",
+    subtitle: "Don Toliver"
+  }
+];
 
-  var img = document.createElement("img");
-  img.src = item.image;
-  img.alt = item.title;
+// ===== GRID BUILDER FUNCTION =====
+function buildGrid(data, container) {
+  for (var i = 0; i < data.length; i++) {
+    var item = data[i];
 
-  var title = document.createElement("p");
-  title.textContent = item.title;
-  title.style.fontWeight = "bold";
+    var gridItem = document.createElement("div");
+    gridItem.className = "grid-item";
 
-  var subtitle = document.createElement("p");
-  subtitle.textContent = item.subtitle;
-  subtitle.style.fontStyle = "italic";
-  subtitle.style.opacity = "0.7";
+    var img = document.createElement("img");
+    img.src = item.image;
+    img.alt = item.title;
 
-  gridItem.appendChild(img);
-  gridItem.appendChild(title);
-  gridItem.appendChild(subtitle);
-  container.appendChild(gridItem);
+    var title = document.createElement("p");
+    title.textContent = item.title;
+    title.style.fontWeight = "bold";
+
+    var subtitle = document.createElement("p");
+    subtitle.textContent = item.subtitle;
+    subtitle.style.fontStyle = "italic";
+    subtitle.style.opacity = "0.7";
+
+    gridItem.appendChild(img);
+    gridItem.appendChild(title);
+    gridItem.appendChild(subtitle);
+
+    container.appendChild(gridItem);
+  }
 }
+
+// ===== BUILD SECTIONS =====
+buildGrid(locations, locationContainer);
+buildGrid(songs, musicContainer);
 </script>
 
 ---
