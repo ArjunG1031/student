@@ -51,7 +51,7 @@ var living_in_the_world = [
     "subtitle": "Been here my entire life"
   },
   {
-    "image": "en/2/2f/Yeat_-_Up_2_Me.png",
+    "image": "en/2/2f/Yeat_-_Up_2_M%C3%AB.png",
     "title": "COME N GO",
     "subtitle": "Yeat"
   },
