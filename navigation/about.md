@@ -40,33 +40,30 @@ Images are from Wikipedia
 <script>
 var container = document.getElementById("grid_container");
 
-// Wikipedia base URL
-var http_source = "https://upload.wikimedia.org/wikipedia/";
-
 // DATA (California + Songs)
 var living_in_the_world = [
   {
-    "image": "commons/0/01/Flag_of_California.svg",
+    "image": "http://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg",
     "title": "California",
     "subtitle": "Been here my entire life"
   },
   {
-    "image": "en/2/2f/Yeat_-_Up_2_M%C3%AB.png",
+    "image": "/images/yeat.png",
     "title": "COME N GO",
     "subtitle": "Yeat"
   },
   {
-    "image": "en/0/0c/Travis_Scott_-_Astroworld.png",
+    "image": "/images/travis.png",
     "title": "Butterfly Effect",
     "subtitle": "Travis Scott"
   },
   {
-    "image": "en/4/4b/Lil_Tecca_-_Virgo_World.png",
+    "image": "/images/lil.png",
     "title": "Bad Time",
     "subtitle": "Lil Tecca"
   },
   {
-    "image": "en/6/6a/Don_Toliver_-_Love_Sick.png",
+    "image": "/images/don.png",
     "title": "New Drop",
     "subtitle": "Don Toliver"
   }
@@ -78,7 +75,7 @@ for (const item of living_in_the_world) {
   gridItem.className = "grid-item";
 
   var img = document.createElement("img");
-  img.src = http_source + item.image;
+  img.src = item.image;
   img.alt = item.title;
 
   var title = document.createElement("p");
