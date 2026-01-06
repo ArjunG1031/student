@@ -48,22 +48,22 @@ var living_in_the_world = [
     "subtitle": "Been here my entire life"
   },
   {
-    "image": "/images/yeat.png",
+    "image": "/images/about/COME N GO - YEAT.png",
     "title": "COME N GO",
     "subtitle": "Yeat"
   },
   {
-    "image": "/images/travis.png",
+    "image": "/images/about/Butterfly Effect - Travis Scott.png",
     "title": "Butterfly Effect",
     "subtitle": "Travis Scott"
   },
   {
-    "image": "/images/lil.png",
+    "image": "/images/about/Bad Time - Lil Tecca.png",
     "title": "Bad Time",
     "subtitle": "Lil Tecca"
   },
   {
-    "image": "/images/don.png",
+    "image": "/images/about/New Drop - Don Toliver.png",
     "title": "New Drop",
     "subtitle": "Don Toliver"
   }
