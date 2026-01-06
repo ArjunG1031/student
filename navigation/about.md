@@ -7,10 +7,10 @@ comments: true
 
 ## As a Conversation Starter
 
-Here is where I live and the music I like.
+Here are some places I have lived and some of my favorite songs.
 
 <comment>
-Images are from Wikipedia
+Flags are from Wikipedia. Album covers are my own images.
 </comment>
 
 <style>
@@ -26,7 +26,7 @@ Images are from Wikipedia
 
 .grid-item img {
   width: 100%;
-  height: 100px;
+  height: 120px;
   object-fit: contain;
 }
 
@@ -35,103 +35,115 @@ Images are from Wikipedia
 }
 </style>
 
+<!-- ===== WHERE I’VE LIVED ===== -->
 ## Where I’ve Lived
 <div class="grid-container" id="location_grid"></div>
 
-## Music I Like
-<div class="grid-container" id="music_grid"></div>
-
 <script>
-// ===== CONTAINERS =====
-var locationContainer = document.getElementById("location_grid");
-var musicContainer = document.getElementById("music_grid");
+  const locationGrid = document.getElementById("location_grid");
+  const WIKI_BASE = "https://upload.wikimedia.org/wikipedia/commons/";
 
-// ===== LOCATION DATA =====
-var locations = [
-  {
-    image: "http://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg",
-    title: "California",
-    subtitle: "Been here my entire life"
-  }
-];
+  const locations = [
+    {
+      flag: "0/01/Flag_of_California.svg",
+      title: "California",
+      description: "Lived here my entire life"
+    }
+  ];
 
-// ===== MUSIC DATA =====
-var songs = [
-  {
-    image: "/images/about/COME N GO - YEAT.png",
-    title: "COME N GO",
-    subtitle: "Yeat"
-  },
-  {
-    image: "/images/about/Butterfly Effect - Travis Scott.png",
-    title: "Butterfly Effect",
-    subtitle: "Travis Scott"
-  },
-  {
-    image: "/images/about/Bad Time - Lil Tecca.png",
-    title: "Bad Time",
-    subtitle: "Lil Tecca"
-  },
-  {
-    image: "/images/about/New Drop - Don Toliver.png",
-    title: "New Drop",
-    subtitle: "Don Toliver"
-  }
-];
+  locations.forEach(loc => {
+    const item = document.createElement("div");
+    item.className = "grid-item";
 
-// ===== GRID BUILDER FUNCTION =====
-function buildGrid(data, container) {
-  for (var i = 0; i < data.length; i++) {
-    var item = data[i];
+    const img = document.createElement("img");
+    img.src = WIKI_BASE + loc.flag;
+    img.alt = loc.title;
 
-    var gridItem = document.createElement("div");
-    gridItem.className = "grid-item";
-
-    var img = document.createElement("img");
-    img.src = item.image;
-    img.alt = item.title;
-
-    var title = document.createElement("p");
-    title.textContent = item.title;
+    const title = document.createElement("p");
+    title.textContent = loc.title;
     title.style.fontWeight = "bold";
 
-    var subtitle = document.createElement("p");
-    subtitle.textContent = item.subtitle;
-    subtitle.style.fontStyle = "italic";
-    subtitle.style.opacity = "0.7";
+    const desc = document.createElement("p");
+    desc.textContent = loc.description;
+    desc.style.opacity = "0.7";
 
-    gridItem.appendChild(img);
-    gridItem.appendChild(title);
-    gridItem.appendChild(subtitle);
-
-    container.appendChild(gridItem);
-  }
-}
-
-// ===== BUILD SECTIONS =====
-buildGrid(locations, locationContainer);
-buildGrid(songs, musicContainer);
+    item.appendChild(img);
+    item.appendChild(title);
+    item.appendChild(desc);
+    locationGrid.appendChild(item);
+  });
 </script>
 
 ---
 
-### Journey Through Life
+<!-- ===== FAVORITE SONGS ===== -->
+## 🎵 Favorite Songs
+<div class="grid-container" id="music_grid"></div>
 
-- 🏫 Went to Morning Creek Elementary School  
+<script>
+  // Daniel Lv style SITE_BASE
+  const SITE_BASE = '{{ site.baseurl | default: "" }}';
+  const musicGrid = document.getElementById("music_grid");
+
+  const songs = [
+    {
+      title: "COME N GO",
+      artist: "Yeat",
+      image: SITE_BASE + "/images/about/COME N GO - YEAT.png"
+    },
+    {
+      title: "Butterfly Effect",
+      artist: "Travis Scott",
+      image: SITE_BASE + "/images/about/Butterfly Effect - Travis Scott.png"
+    },
+    {
+      title: "Bad Time",
+      artist: "Lil Tecca",
+      image: SITE_BASE + "/images/about/BAD TIME - Lil Tecca.png"
+    },
+    {
+      title: "New Drop",
+      artist: "Don Toliver",
+      image: SITE_BASE + "/images/about/New Drop - Don Toliver.png"
+    }
+  ];
+
+  songs.forEach(song => {
+    const item = document.createElement("div");
+    item.className = "grid-item";
+
+    const img = document.createElement("img");
+    img.src = song.image;
+    img.alt = song.title;
+
+    const title = document.createElement("p");
+    title.textContent = song.title;
+    title.style.fontWeight = "bold";
+
+    const artist = document.createElement("p");
+    artist.textContent = song.artist;
+    artist.style.opacity = "0.7";
+
+    item.appendChild(img);
+    item.appendChild(title);
+    item.appendChild(artist);
+    musicGrid.appendChild(item);
+  });
+</script>
+
+---
+
+## Journey Through Life
+
+- 🏫 Went to Stone Ranch Elementary School  
 - 🏫 Went to Oak Valley Middle School  
-- 🏫 Currently at Del Norte High School  
-- 🏀 I’ve played basketball my entire life  
+- 🎓 Currently attend Del Norte High School  
+- 🏀 Played basketball my entire life  
 - 💻 Member of the CyberAegis club  
 
-### Family, Friends, and Fun
+---
+
+## Culture, Family, and Fun
 
 - Born in the U.S., family is from India  
 - Family of 4: me, my sister, my mom, and my dad  
-
-<comment>
-Gallery of pics (scroll if more are added later)
-</comment>
-
-<div class="image-gallery">
-  <img src="{{site.baseurl}}/images/about/Arjun.jpeg" alt="Me">
-</div>
