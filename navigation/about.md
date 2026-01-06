@@ -5,116 +5,117 @@ permalink: /about/
 comments: true
 ---
 
-## As a conversation Starter
+## As a Conversation Starter
 
-Here are some places I have lived.
+Here is where I live and the music I like.
 
 <comment>
-Flags are made using Wikipedia images
+Images are from Wikipedia
 </comment>
 
 <style>
-    /* Style looks pretty compact, 
-       - grid-container and grid-item are referenced the code 
-    */
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Dynamic columns */
-        gap: 10px;
-    }
-    .grid-item {
-        text-align: center;
-    }
-    .grid-item img {
-        width: 100%;
-        height: 100px; /* Fixed height for uniformity */
-        object-fit: contain; /* Ensure the image fits within the fixed height */
-    }
-    .grid-item p {
-        margin: 5px 0; /* Add some margin for spacing */
-    }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
 
-    .image-gallery {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 10px;
-        }
+.grid-item {
+  text-align: center;
+}
 
-    .image-gallery img {
-        max-height: 150px;
-        object-fit: cover;
-        border-radius: 5px;
-    }
+.grid-item img {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+}
+
+.grid-item p {
+  margin: 5px 0;
+}
 </style>
 
-<!-- This grid_container class is used by CSS styling and the id is used by JavaScript connection -->
-<div class="grid-container" id="grid_container">
-    <!-- content will be added here by JavaScript -->
-</div>
+<div class="grid-container" id="grid_container"></div>
 
 <script>
-    // 1. Make a connection to the HTML container defined in the HTML div
-    var container = document.getElementById("grid_container"); // This container connects to the HTML div
+var container = document.getElementById("grid_container");
 
-    // 2. Define a JavaScript object for our http source and our data rows for the Living in the World grid
-    var http_source = "https://upload.wikimedia.org/wikipedia/commons/";
-    var living_in_the_world = [
-        {"flag": "0/01/Flag_of_California.svg", "greeting": "Hey", "description": "California - Been here my entire life"},
-      
-    ];
+// Wikipedia base URL
+var http_source = "https://upload.wikimedia.org/wikipedia/";
 
-    // 3a. Consider how to update style count for size of container
-    // The grid-template-columns has been defined as dynamic with auto-fill and minmax
+// DATA (California + Songs)
+var living_in_the_world = [
+  {
+    "image": "commons/0/01/Flag_of_California.svg",
+    "title": "California",
+    "subtitle": "Been here my entire life"
+  },
+  {
+    "image": "en/2/2f/Yeat_-_Up_2_Me.png",
+    "title": "COME N GO",
+    "subtitle": "Yeat"
+  },
+  {
+    "image": "en/0/0c/Travis_Scott_-_Astroworld.png",
+    "title": "Butterfly Effect",
+    "subtitle": "Travis Scott"
+  },
+  {
+    "image": "en/4/4b/Lil_Tecca_-_Virgo_World.png",
+    "title": "Bad Time",
+    "subtitle": "Lil Tecca"
+  },
+  {
+    "image": "en/6/6a/Don_Toliver_-_Love_Sick.png",
+    "title": "New Drop",
+    "subtitle": "Don Toliver"
+  }
+];
 
-    // 3b. Build grid items inside of our container for each row of data
-    for (const location of living_in_the_world) {
-        // Create a "div" with "class grid-item" for each row
-        var gridItem = document.createElement("div");
-        gridItem.className = "grid-item";  // This class name connects the gridItem to the CSS style elements
-        // Add "img" HTML tag for the flag
-        var img = document.createElement("img");
-        img.src = http_source + location.flag; // concatenate the source and flag
-        img.alt = location.flag + " Flag"; // add alt text for accessibility
+// Build grid
+for (const item of living_in_the_world) {
+  var gridItem = document.createElement("div");
+  gridItem.className = "grid-item";
 
-        // Add "p" HTML tag for the description
-        var description = document.createElement("p");
-        description.textContent = location.description; // extract the description
+  var img = document.createElement("img");
+  img.src = http_source + item.image;
+  img.alt = item.title;
 
-        // Add "p" HTML tag for the greeting
-        var greeting = document.createElement("p");
-        greeting.textContent = location.greeting;  // extract the greeting
+  var title = document.createElement("p");
+  title.textContent = item.title;
+  title.style.fontWeight = "bold";
 
-        // Append img and p HTML tags to the grid item DIV
-        gridItem.appendChild(img);
-        gridItem.appendChild(description);
-        gridItem.appendChild(greeting);
+  var subtitle = document.createElement("p");
+  subtitle.textContent = item.subtitle;
+  subtitle.style.fontStyle = "italic";
+  subtitle.style.opacity = "0.7";
 
-        // Append the grid item DIV to the container DIV
-        container.appendChild(gridItem);
-    }
+  gridItem.appendChild(img);
+  gridItem.appendChild(title);
+  gridItem.appendChild(subtitle);
+  container.appendChild(gridItem);
+}
 </script>
 
-### Journey through Life
+---
 
-My Life at California
+### Journey Through Life
 
-- 🏫 Went to Morning Creek Elementary School
-- 🏫 Went to Oak Valley Middle School
-- 🏀 I have played basketball my entire life and I also love watching it.
-- 💻 I joined the CyberAegis club in Middle School
-- 🏫 Graduated Middle School and started High School at Del Norte
+- 🏫 Went to Morning Creek Elementary School  
+- 🏫 Went to Oak Valley Middle School  
+- 🏫 Currently at Del Norte High School  
+- 🏀 I’ve played basketball my entire life  
+- 💻 Member of the CyberAegis club  
+
 ### Family, Friends, and Fun
 
-For me everthing revolves around family and friends.
-
-- I was born in the U.S. but my family is from India
-- My family consists of 4 people, me, my younger sister, my dad, and my mom
-- The gallery of pics has some of me
+- Born in the U.S., family is from India  
+- Family of 4: me, my sister, my mom, and my dad  
 
 <comment>
-Gallery of Pics, scroll to the right for more ...
+Gallery of pics (scroll if more are added later)
 </comment>
+
 <div class="image-gallery">
-  <img src="{{site.baseurl}}/images/about/Arjun.jpeg" alt="Image 1">
+  <img src="{{site.baseurl}}/images/about/Arjun.jpeg" alt="Me">
 </div>
